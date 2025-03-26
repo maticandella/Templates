@@ -1,11 +1,124 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import data from '../data/event.json';
+import Hero from '../components/Hero.astro';
+import Countdown from '../components/Countdown.astro';
+import Carousel from '../components/Carousel.astro';
+import Cards from '../components/Cards.astro';
+import Gifts from '../components/Gifts.astro';
+import SocialMedia from '../components/SocialMedia.astro';
+import 'remixicon/fonts/remixicon.css';
+import Footer from '../components/Footer.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const eventDate = new Date(data.eventDate);
+
+// Obtenemos cada parte por separado
+const weekday = eventDate.toLocaleDateString('es-AR', { weekday: 'long' });
+const day = eventDate.getDate();
+const month = eventDate.toLocaleDateString('es-AR', { month: 'long' });
+
+// Capitalizamos el día de la semana
+const formattedWeekday = weekday.charAt(0).toUpperCase() + weekday.slice(1);
+
+// Hora en 24hs
+const formattedTime = eventDate.toLocaleTimeString('es-AR', {
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false,
+});
+
+// Resultado sin la coma:
+const formattedDate = `${formattedWeekday} ${day} de ${month} - ${formattedTime} hs`;
+
+// Dirección dividida
+const [street, city, province] = data.address.split(',');
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={data.title}>
+	<Hero />
+	<section class="flex flex-col items-center space-y-4 my-10 text-purple-500">
+		<!-- Contador de tiempo faltante para la fiesta -->
+		<Countdown />
+	</section>
+
+	<!-- Sección fiesta -->
+	<section>
+		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800">
+		<div class="flex flex-col items-center">
+			<h1 class="font-lobster font-semibold text-3xl my-5 text-purple-500">Fiesta</h1>
+		</div>
+		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800">
+	
+		<div class="flex flex-col items-center my-5">
+			<div class="flex flex-col items-center font-grotesk mb-4">
+				<div class="flex flex-row gap-1 text-center mb-1">
+					<h3 class="text-slate-700 font-bold text-2xl">Día</h3>
+					<!-- <Icon name="calendar" size={100}/> -->
+				</div>
+				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
+				<button class="btn-purple">Agendar</button>
+			</div>
+	
+			<div class="flex flex-col items-center font-grotesk mb-4">
+				<div class="flex flex-row gap-1 text-center mb-1">
+					<h3 class="text-slate-700 font-bold text-2xl">Lugar</h3>
+					<img src="images/bolaboliche.gif" class="w-10 h-10" alt="Gif de bola de boliche">
+				</div>
+				
+				<h4 class="text-slate-500 text-lg mb-2">{data.location}</h4>
+				<button class="btn-purple">Confirmar asistencia</button>
+			</div>
+	
+			<div class="flex flex-col items-center font-grotesk px-4 sm:px-0">
+				<h3 class="text-slate-700 font-bold text-2xl mb-1">Dirección</h3>
+				<h4 class="text-slate-500 text-lg text-center leading-snug mb-2">
+					{street.trim()}, {city.trim()}, {province.trim()}
+				</h4>
+				<button class="btn-purple">¿Cómo llegar?</button>
+			  </div>
+		</div>
+	</section>
+	
+	<!-- Sección Galería -->
+	<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800">
+	<Carousel />
+	<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
+	
+	<!-- Sección Cards -->
+	<section>
+		<Cards />
+		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
+	</section>
+
+	<!-- Sección Gifts -->
+	<section>
+		<Gifts />
+		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
+	</section>
+
+	<!-- Sección Social Media -->
+	<section>
+		<SocialMedia />
+		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
+	</section>
+
+	<section>
+		<div class="flex flex-col justify-center items-center">
+			<h3 class="text-slate-500 text-lg mb-5 text-center px-4">Tu presencia en esta noche nunca la olvidaré</h3>
+			<img 
+				src={data.mainImage} 
+				alt="Foto principal" 
+				class="object-cover rounded-md w-[70%] h-[70%] md:w-[40%] md:h-[40%] lg:w-[30%] lg:h-[30%]"
+				/>
+	  
+				<div class="flex flex-row justify-center my-5 px-4 gap-1">
+					<h3 class="text-slate-800 text-2xl font-lobster font-bold">Te espero</h3>
+					<i class="ri-heart-3-fill text-red-500"></i>
+				</div>
+			
+		</div>
+		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
+	</section>
+	
+	<Footer />
 </Layout>

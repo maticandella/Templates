@@ -1,0 +1,26 @@
+---
+import data from '../data/event.json';
+
+const eventDate = new Date(data.eventDate).toLocaleDateString("es-ES", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).replace(/\//g, ".");
+---
+<section class="relative w-full min-h-screen flex items-center justify-center">
+    <img 
+      src={data.mainImage} 
+      alt="Foto principal" 
+      class="absolute w-full h-full object-cover"
+    />
+  
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+  
+    <div class="relative z-10 px-6 py-10 text-center space-y-2 mt-60">
+        <h3 class="text-xl sm:text-3xl font-bold text-white underline decoration-purple-500">{eventDate}</h3>
+        <h1 class="text-4xl sm:text-7xl font-lobster font-bold text-slate-100">{data.title}</h1>
+        <h2 class="text-2xl sm:text-4xl font-grotesk font-bold text-purple-500">{data.eventTitle}</h2>
+        <h3 class="text-xl sm:text-3xl font-semibold text-white">{data.subtitle}</h3>
+    </div>
+</section>

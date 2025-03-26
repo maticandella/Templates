@@ -1,0 +1,18 @@
+{
+    "title": "Camila",
+    "eventTitle": "Mis 15 años",
+    "subtitle": "¡Te invito a compartir una noche inolvidable!",
+    "mainImage": "/images/hero.avif",
+    "eventDate": "2025-07-25T21:30:00",
+    "location": "Salón Los Robles",
+    "address": "Bv. Oroño 1124, Rosario, Santa Fe",
+    "story": "Nos conocimos en 2015 y desde entonces hemos compartido aventuras increíbles. ¡Y ahora queremos celebrarlo con vos!",
+    "gallery": [
+        "/images/1.avif",
+        "/images/2.avif",
+        "/images/3.avif",
+        "/images/4.avif",
+        "/images/5.avif"
+    ],
+    "hashtag": "#15Cami"
+}

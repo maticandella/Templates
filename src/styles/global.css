@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .btn-purple {
+        @apply h-10 w-60 mx-auto bg-purple-500 font-semibold text-white rounded-3xl transition duration-300;
+    }
+    .btn-purple:hover {
+        @apply bg-purple-900;
+    }
+    .btn-purple:focus,
+    .btn-purple:active {
+        @apply bg-purple-700;
+    }
+    .card {
+        @apply bg-white rounded-3xl shadow-lg shadow-slate-300 flex flex-col items-center text-center p-6;
+    }
+}
