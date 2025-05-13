@@ -9,74 +9,42 @@ import Gifts from '../components/Gifts.astro';
 import SocialMedia from '../components/SocialMedia.astro';
 import 'remixicon/fonts/remixicon.css';
 import Footer from '../components/Footer.astro';
-
-const eventDate = new Date(data.eventDate);
-
-// Obtenemos cada parte por separado
-const weekday = eventDate.toLocaleDateString('es-AR', { weekday: 'long' });
-const day = eventDate.getDate();
-const month = eventDate.toLocaleDateString('es-AR', { month: 'long' });
-
-// Capitalizamos el día de la semana
-const formattedWeekday = weekday.charAt(0).toUpperCase() + weekday.slice(1);
-
-// Hora en 24hs
-const formattedTime = eventDate.toLocaleTimeString('es-AR', {
-  hour: '2-digit',
-  minute: '2-digit',
-  hour12: false,
-});
-
-// Resultado sin la coma:
-const formattedDate = `${formattedWeekday} ${day} de ${month} - ${formattedTime} hs`;
-
-// Dirección dividida
-const [street, city, province] = data.address.split(',');
+import Modal from '../components/Modal.astro';
+import Fest from '../components/Fest.astro';
 ---
 
 <Layout title={data.title}>
 	<Hero />
-	<section class="flex flex-col items-center space-y-4 my-10 text-purple-500">
+
+	<section class="px-4 overflow-x-auto my-10">
+		<div class="flex flex-col justify-between items-center">
+			<img src="images/comillas1.png" class="w-[30%] h-[30%]" alt="Comillas">
+			<h3 class="text-center text-lg sm:text-xl md:text-4xl text-black px-4">{data.subtitle}</h3>
+			<img src="images/comillas2.png" class="w-[30%] h-[30%] mt-2" alt="Comillas">
+		</div>
+		
+	</section>
+
+	<section class="relative flex flex-col justify-center items-center space-y-4 my-10 text-white min-h-[500px] w-full">
+		
+		<!-- Fondo -->
+		<div class="absolute inset-0 bg-[url('/images/disco.webp')] bg-cover bg-center grayscale brightness-50"></div>
+		
+		<!-- Centro oscuro -->
+		<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+			<div class="w-[60%] h-[60%] bg-black/60 rounded-full blur-3xl"></div>
+		</div>
+
 		<!-- Contador de tiempo faltante para la fiesta -->
-		<Countdown />
+		<div class="relative z-10 text-center flex flex-col gap-6">
+			<Countdown />
+		</div>
+		 
 	</section>
 
 	<!-- Sección fiesta -->
-	<section>
-		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800">
-		<div class="flex flex-col items-center">
-			<h1 class="font-lobster font-semibold text-3xl my-5 text-purple-500">Fiesta</h1>
-		</div>
-		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800">
-	
-		<div class="flex flex-col items-center my-5">
-			<div class="flex flex-col items-center font-grotesk mb-4">
-				<div class="flex flex-row gap-1 text-center mb-1">
-					<h3 class="text-slate-700 font-bold text-2xl">Día</h3>
-					<!-- <Icon name="calendar" size={100}/> -->
-				</div>
-				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
-				<button class="btn-purple">Agendar</button>
-			</div>
-	
-			<div class="flex flex-col items-center font-grotesk mb-4">
-				<div class="flex flex-row gap-1 text-center mb-1">
-					<h3 class="text-slate-700 font-bold text-2xl">Lugar</h3>
-					<img src="images/bolaboliche.gif" class="w-10 h-10" alt="Gif de bola de boliche">
-				</div>
-				
-				<h4 class="text-slate-500 text-lg mb-2">{data.location}</h4>
-				<button class="btn-purple">Confirmar asistencia</button>
-			</div>
-	
-			<div class="flex flex-col items-center font-grotesk px-4 sm:px-0">
-				<h3 class="text-slate-700 font-bold text-2xl mb-1">Dirección</h3>
-				<h4 class="text-slate-500 text-lg text-center leading-snug mb-2">
-					{street.trim()}, {city.trim()}, {province.trim()}
-				</h4>
-				<button class="btn-purple">¿Cómo llegar?</button>
-			  </div>
-		</div>
+	<section class="relative">
+		<Fest />
 	</section>
 	
 	<!-- Sección Galería -->
@@ -112,7 +80,7 @@ const [street, city, province] = data.address.split(',');
 				/>
 	  
 				<div class="flex flex-row justify-center my-5 px-4 gap-1">
-					<h3 class="text-slate-800 text-2xl font-lobster font-bold">Te espero</h3>
+					<h3 class="text-slate-800 text-2xl font-roboto font-bold">Te espero</h3>
 					<i class="ri-heart-3-fill text-red-500"></i>
 				</div>
 			

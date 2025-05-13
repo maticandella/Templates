@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                lobster: ['Lobster', 'cursive'],
+                roboto: ['Roboto', 'sans-serif'],
                 grotesk: ['Space Grotesk', 'sans-serif']
             },
         },
