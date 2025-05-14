@@ -13,13 +13,13 @@ import Modal from '../components/Modal.astro';
 import Fest from '../components/Fest.astro';
 ---
 
-<Layout title={data.title}>
+<Layout titletop={data.titletop}>
 	<Hero />
 
 	<section class="px-4 overflow-x-auto my-10">
 		<div class="flex flex-col justify-between items-center">
 			<img src="images/comillas1.png" class="w-[30%] h-[30%]" alt="Comillas">
-			<h3 class="text-center text-lg sm:text-xl md:text-4xl text-black px-4">{data.subtitle}</h3>
+			<h3 class="text-center text-3xl md:text-4xl text-black px-4">{data.subtitle}</h3>
 			<img src="images/comillas2.png" class="w-[30%] h-[30%] mt-2" alt="Comillas">
 		</div>
 		
@@ -48,20 +48,19 @@ import Fest from '../components/Fest.astro';
 	</section>
 	
 	<!-- Sección Galería -->
-	<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800">
-	<Carousel />
-	<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
+	<section class="my-10">
+		<Carousel />
+	</section>
+	
 	
 	<!-- Sección Cards -->
-	<section>
+	<section class="my-10">
 		<Cards />
-		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
 	</section>
 
 	<!-- Sección Gifts -->
-	<section>
+	<section class="relative my-10">
 		<Gifts />
-		<hr class="h-1 w-[75%] mx-auto opacity-20 bg-slate-800 my-5">
 	</section>
 
 	<!-- Sección Social Media -->
