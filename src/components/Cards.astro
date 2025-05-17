@@ -1,3 +1,7 @@
+---
+import Modal from "./Modal.astro";
+---
+
 <div class="flex flex-col items-center">
     <!-- <h2 class="font-roboto font-semibold text-3xl mb-5 text-purple-500">¡Hagamos una fiesta épica!</h2> -->
     <h4 class="font-roboto font-semibold text-3xl mb-5 text-center text-black">Les dejamos algunos detalles a tener en cuenta</h4>
@@ -13,7 +17,9 @@
         </div>
       
       <p class="text-slate-500 mb-4">¿Cuál es la canción que no puede faltar en la PlayList de la fiesta?</p>
-      <button class="btn-purple">Sugerir canción</button>
+      <a href="https://forms.gle/P6bphD8DFSoSDWzu8" 
+         target="_blank"
+        rel="noopener noreferrer"><button class="btn-purple">Sugerir canción</button></a>
     </div>
   
     <!-- Card 2 -->
@@ -23,7 +29,12 @@
           <img src="/images/Moon Walk.gif" alt="Gig de baile" class="h-12 w-12">
         </div>
         <p class="text-slate-500 mb-4">Una orientación para que tengas en cuenta en tu vestuario</p>
-        <button class="btn-purple">Ver más</button>
+        <button
+      class="btn-purple"
+      onclick="document.getElementById('modal-dress').classList.remove('hidden'); document.getElementById('modal-dress').classList.add('flex');"
+    >
+      Ver más
+    </button>
       </div>
   
     <!-- Card 3 -->
@@ -33,7 +44,34 @@
         <img src="/images/To Do.gif" alt="Gif de notas" class="h-12 w-12">
       </div>
       <p class="text-slate-500 mb-4">Información adicional para que tengas en cuenta</p>
-      <button class="btn-purple">+ Info</button>
+      <button
+      class="btn-purple"
+      onclick="document.getElementById('modal-tips').classList.remove('hidden'); document.getElementById('modal-tips').classList.add('flex');"
+    >
+      + Info
+    </button>
     </div>
   
-  </div>
+</div>
+
+  <!-- Modales -->
+<Modal
+  id="modal-dress"
+  title="Dress Code"
+  content="Vestite como quieras, pero sin olvidar tu mejor sonrisa. 😎"
+  iconName="images/moño.png"
+/>
+
+<Modal
+  id="modal-tips"
+  title="Tips y Notas"
+  content="No olvides confirmar asistencia y traer muchas ganas de pasarla bien. 🎉"
+  iconName="lightbulb-line"
+/>
+
+<Modal
+  id="modal-cbu"
+  title="Número de CBU"
+  content={`Alias: regalito.evento\nCBU: 0000003100000000000011 💸`}
+  iconName="bank-card-line"
+/>

@@ -16,3 +16,10 @@
         @apply bg-white rounded-3xl shadow-lg shadow-slate-300 flex flex-col items-center text-center p-6;
     }
 }
+
+.modal-overlay.hidden {
+  display: none;
+}
+.modal-overlay.flex {
+  display: flex;
+}

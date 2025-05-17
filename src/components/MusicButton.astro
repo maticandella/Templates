@@ -1,0 +1,48 @@
+<button id="music-control" class="fixed bottom-10 right-5 sm:right-10 
+    bg-slate-300 text-black rounded-full p-4 opacity-60 sm:opacity-80
+    shadow-lg 
+    drop-shadow-[0_5px_10px_rgba(0,0,0,0.2)] 
+    transition duration-300 ease-in-out 
+    transform hover:scale-110 hover:shadow-2xl 
+    flex justify-center items-center"> 
+	<img src="images/play.png" class="w-5 h-5 sm:w-6 sm:h-6 object-cover opacity-60 sm:opacity-80" alt="Icono de play">
+</button>
+
+<audio id="background-music" src="music.mp3" loop></audio>
+
+<script>
+  const sectionsWithBackground = document.querySelectorAll('section[data-background]');
+  const musicControl = document.getElementById('music-control');
+  const audio = document.getElementById('background-music');
+
+  let isPlaying = false;
+
+  // === Lógica para reproducir/pausar ===
+  if (musicControl && audio instanceof HTMLAudioElement) {
+    musicControl.addEventListener('click', () => {
+      if (!isPlaying) {
+        audio.play();
+        isPlaying = true;
+      } else {
+        audio.pause();
+        isPlaying = false;
+      }
+    });
+  }
+
+  // === Lógica para ajustar z-index ===
+  window.addEventListener('scroll', () => {
+    let isInSectionWithBackground = false;
+
+    sectionsWithBackground.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        isInSectionWithBackground = true;
+      }
+    });
+
+    if (musicControl) {
+      musicControl.style.zIndex = isInSectionWithBackground ? '9999' : '1000';
+    }
+  });
+</script>

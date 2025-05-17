@@ -13,15 +13,14 @@ import Modal from '../components/Modal.astro';
 import Fest from '../components/Fest.astro';
 import Video from '../components/Video.astro';
 import Subtitle from '../components/Subtitle.astro';
+import MusicButton from '../components/MusicButton.astro';
+import ModalInit from '../components/ModalInit.astro';
+import FinalSection from '../components/FinalSection.astro';
 ---
 
-<button id="music-control" class="fixed top-10 right-10 bg-slate-300 text-black rounded-full p-4 shadow-md transition duration-300 flex justify-center items-center">
-  <img src="images/play.png" class="w-6 h-6 object-cover" alt="Icono de play">
-</button>
-
-<audio id="background-music" src="music.mp3" loop></audio>
-
 <Layout titletop={data.titletop}>
+	<!-- todo creo que hay que cambiar el icono, quedaria mejor una nota musical -->
+	<MusicButton />
 	<!-- todo ver ubicacion de elementos en base a la foto de flor -->
 	<Hero />
 
@@ -35,7 +34,8 @@ import Subtitle from '../components/Subtitle.astro';
 	<section class="relative flex flex-col justify-center items-center space-y-4 my-10 text-white min-h-[500px] w-full">
 		
 		<!-- Fondo -->
-		<div class="absolute inset-0 bg-[url('/images/disco.webp')] bg-cover bg-center grayscale brightness-50" data-background></div>
+		<!-- <div class="absolute inset-0 bg-[url('/images/disco.webp')] bg-cover bg-center grayscale brightness-50" data-background></div> -->
+		 <div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-background style="background-image: url('/images/disco.webp'); background-attachment: fixed;"></div>
 		
 		<!-- Centro oscuro -->
 		<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
@@ -59,17 +59,19 @@ import Subtitle from '../components/Subtitle.astro';
 		<Carousel />
 	</section>
 	
-	
+	<!-- todo falta acomodar las img para cada modal -->
 	<!-- Sección Cards -->
 	<section class="my-10">
 		<Cards />
 	</section>
 
+	<!-- todo falta el modal -->
 	<!-- Sección Gifts -->
 	<section class="relative my-10">
 		<Gifts />
 	</section>
 
+	<!-- todo falta link a carpeta -->
 	<!-- Sección Social Media -->
 	<section class="my-10">
 		<SocialMedia />
@@ -79,52 +81,7 @@ import Subtitle from '../components/Subtitle.astro';
 		<Video />
 	</section>
 	
+	<FinalSection />
 	<Footer />
 </Layout>
 
-<script>
-  const sectionsWithBackground = document.querySelectorAll('section[data-background]');
-  const musicControl = document.getElementById('music-control');
-  const audio = document.getElementById('background-music');
-
-  let isPlaying = false;
-
-  // === Lógica para reproducir/pausar ===
-  if (musicControl && audio instanceof HTMLAudioElement) {
-    musicControl.addEventListener('click', () => {
-      if (!isPlaying) {
-        audio.play();
-        musicControl.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-            <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM12 19C6.477 19 2 14.523 2 9S6.477 1 12 1s10 5.477 10 10-5.477 10-10 10z" />
-          </svg>
-        `;
-        isPlaying = true;
-      } else {
-        audio.pause();
-        musicControl.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-            <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM12 19C6.477 19 2 14.523 2 9S6.477 1 12 1s10 5.477 10 10-5.477 10-10 10z" />
-          </svg>
-        `;
-        isPlaying = false;
-      }
-    });
-  }
-
-  // === Lógica para ajustar z-index ===
-  window.addEventListener('scroll', () => {
-    let isInSectionWithBackground = false;
-
-    sectionsWithBackground.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        isInSectionWithBackground = true;
-      }
-    });
-
-    if (musicControl) {
-      musicControl.style.zIndex = isInSectionWithBackground ? '1000' : '10';
-    }
-  });
-</script>
