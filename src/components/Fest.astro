@@ -28,7 +28,7 @@ const [street, city, province] = data.address.split(',');
 
 <div class="absolute inset-0 bg-[url('/images/cieloconestrellas.webp')] bg-cover bg-center grayscale brightness-50" data-background></div>
 <div class="relative z-10 flex flex-col justify-center items-center gap-4 p-10">
-       <img src="/images/discoball.gif" alt="Gif de bola de disco" class="h-[35%] w-[35%] sm:h-[15%] sm:w-[15%] lg:h-[8%] lg:w-[8%]">
+       <img src="/images/discoball.gif" alt="Gif de bola de disco" class="h-[35%] w-[35%] sm:h-[15%] sm:w-[15%] lg:h-[8%] lg:w-[8%]" loading="lazy">
 
         <hr class="h-1 w-[15%] mx-auto bg-white">
         <h1 class="font-roboto text-4xl my-2 text-white">FIESTA</h1>
@@ -37,7 +37,7 @@ const [street, city, province] = data.address.split(',');
 		<div class="flex flex-col items-center my-5 bg-white py-5 px-8 rounded-3xl">
 			<div class="flex flex-col items-center font-grotesk mb-4">
 				<div class="flex flex-col gap-1 text-center mb-1">
-					<img src="/images/calendar.gif" alt="Gif de calendario" class="h-12 w-12">
+					<img src="/images/calendar.gif" alt="Gif de calendario" class="h-12 w-12" loading="lazy">
 					<h3 class="text-slate-700 font-bold text-2xl mb-1">Día</h3>
 				</div>
 				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
@@ -45,7 +45,7 @@ const [street, city, province] = data.address.split(',');
 			</div>
 	
 			<div class="flex flex-col items-center font-grotesk mb-4">
-                    <img src="/images/location.gif" alt="Gif de ubicación" class="h-12 w-12">
+                    <img src="/images/location.gif" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
 					<h3 class="text-slate-700 font-bold text-2xl">Lugar</h3>
 				
 				<h4 class="text-slate-500 text-lg mb-2">{data.location}</h4>
@@ -57,7 +57,7 @@ const [street, city, province] = data.address.split(',');
 			</div>
 	
 			<div class="flex flex-col items-center font-grotesk px-4 sm:px-0">
-                <img src="/images/location.gif" alt="Gif de ubicación" class="h-12 w-12">
+                <img src="/images/location.gif" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
 				<h3 class="text-slate-700 font-bold text-2xl mb-1">Dirección</h3>
 				<h4 class="text-slate-500 text-lg text-center leading-snug mb-2">
 					{street.trim()}, {city.trim()}, {province.trim()}

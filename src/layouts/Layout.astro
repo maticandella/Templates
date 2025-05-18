@@ -11,8 +11,8 @@ const { titletop } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://cdn.jsdelivr.net/npm/remixicon @4.5.0/fonts/remixicon.css" rel="stylesheet">
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon @4.5.0/fonts/remixicon.css" rel="stylesheet"> -->
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,7 @@ const { titletop } = Astro.props;
 	</head>
 	<body class="font-sans">
 		<slot />
+		 <script src="../scripts/audioControl.js"></script>
 	</body>
 </html>
 

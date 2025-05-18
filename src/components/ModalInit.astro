@@ -1,34 +1,13 @@
 ---
-// Prop para controlar si el modal está abierto
-export interface Props {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const { isOpen, onClose } = Astro.props;
+const show = true;
 ---
-
-<!-- Modal overlay -->
-<div class={isOpen ? 'fixed inset-0 bg-black/50 z-[9999]' : 'hidden'}>
-  <!-- Modal content -->
-  <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-md">
-    <h3 class="text-xl font-bold mb-4">Bienvenido a la fiesta de Florencia</h3>
-    <p class="mb-4">¿Deseas escuchar música mientras navegas?</p>
-
-    <!-- Botones de opción -->
-    <div class="flex justify-between">
-      <button 
-    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-    onclick="localStorage.setItem('musicPreference', 'on'); onClose();"
-  >
-    Sí, quiero música 🎶
-  </button>
-  <button 
-    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-    onclick="localStorage.setItem('musicPreference', 'off'); onClose();"
-  >
-    Sin música 🙅‍♂️
-  </button>
+<div id="modal-init" class={`fixed inset-0 bg-black/90 z-50 flex items-center justify-center transition-opacity duration-300 ${show ? '' : 'hidden'}`}>
+  <div class="bg-white text-center rounded-xl p-6 shadow-xl max-w-md mx-4 sm:mx-auto">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Bienvenidos a la invitación de Florencia</h2>
+    <p class="mb-6 font-roboto">La música de fondo es parte de la experiencia ✨</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <button id="enter-with-music" class="btn-purple py-2 px-4 rounded">Ingresar con música</button>
+      <button id="enter-without-music" class="btn-purple py-2 px-4 rounded">Ingresar sin música</button>
     </div>
   </div>
 </div>

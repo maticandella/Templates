@@ -19,8 +19,11 @@ import FinalSection from '../components/FinalSection.astro';
 ---
 
 <Layout titletop={data.titletop}>
+	<ModalInit />
 	<!-- todo creo que hay que cambiar el icono, quedaria mejor una nota musical -->
 	<MusicButton />
+	<audio id="background-music" src="/music.mp3" loop preload="auto"></audio>
+	
 	<!-- todo ver ubicacion de elementos en base a la foto de flor -->
 	<Hero />
 
