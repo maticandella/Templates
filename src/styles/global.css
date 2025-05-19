@@ -18,14 +18,29 @@
 }
 
 .modal-overlay.hidden {
-  display: none;
+    display: none;
 }
+
 .modal-overlay.flex {
-  display: flex;
+    display: flex;
 }
 
 .bg-silver-custom {
     background: #8e9eab;
-    background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab); 
+    background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);
     background: linear-gradient(to left, #eef2f3, #8e9eab);
+}
+
+@font-face {
+    font-family: 'PoltawskiNowy';
+    src: url('/fonts/PoltawskiNowy-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PoltawskiNowy';
+    src: url('/fonts/PoltawskiNowy-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
 }

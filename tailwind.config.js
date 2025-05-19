@@ -5,7 +5,8 @@ module.exports = {
         extend: {
             fontFamily: {
                 roboto: ['Roboto', 'sans-serif'],
-                grotesk: ['Space Grotesk', 'sans-serif']
+                grotesk: ['Space Grotesk', 'sans-serif'],
+                poltawskinowy: ['PoltawskiNowy', 'serif'],
             },
         },
     },
