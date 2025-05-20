@@ -34,12 +34,13 @@ import FinalSection from '../components/FinalSection.astro';
 	</section>
 
 	<!-- todo cambiar tipofrafía -->
+	<!-- todo averiguar como hacer el parallax para el scroll, ya que en IOS mobile no funciona -->
 	<section class="relative flex flex-col justify-center items-center space-y-4 my-10 text-white min-h-[500px] w-full">
 		
 		<!-- Fondo -->
-		<!-- <div class="absolute inset-0 bg-[url('/images/disco.webp')] bg-cover bg-center grayscale brightness-50" data-background></div> -->
-		 <div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-background style="background-image: url('/images/disco.webp'); background-attachment: fixed;"></div>
-		
+		<!-- <div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-background style="background-image: url('/images/disco.webp'); background-attachment: fixed;"></div> -->
+		<div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-background style="background-image: url('/images/disco.webp');"></div>
+  
 		<!-- Centro oscuro -->
 		<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
 			<div class="w-[60%] h-[60%] bg-black/60 rounded-full blur-3xl"></div>
@@ -49,7 +50,6 @@ import FinalSection from '../components/FinalSection.astro';
 		<div class="relative z-10 text-center flex flex-col gap-6">
 			<Countdown />
 		</div>
-		 
 	</section>
 
 	<!-- Sección fiesta -->
@@ -87,4 +87,3 @@ import FinalSection from '../components/FinalSection.astro';
 	<FinalSection />
 	<Footer />
 </Layout>
-
