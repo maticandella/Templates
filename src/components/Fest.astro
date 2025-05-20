@@ -42,20 +42,24 @@ const [street, city, province] = data.address.split(',');
 				</div>
 				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
 				
-				
-
-				<a
+				<!-- <a
 					href="https://evt.to/eihodshhw" 
 					target="_blank" 
 					rel="noopener noreferrer"
 					class="btn-purple"
-				><button class="btn-purple">Agendar</button></a>
+				><button class="btn-purple">Agendar</button></a> -->
 
-				<!-- <span class="start">2025-06-27 21:30:00</span>
-				<span class="timezone">America/Argentina/Buenos_Aires</span>
-				<span class="title">Mis 15 - Flor</span>
-				<span class="description">Te espero para celebrar conmigo 🎉</span>
-				<span class="location">Jaque Eventos</span> -->
+				<button id="btn-agendar" class="btn-purple">Agendar</button>
+				<!-- <div title="Add to Calendar" class="addeventatc" data-styling="none">
+					<button class="btn-purple">Agendar</button>
+					<span class="start">27/06/2025 09:30 PM</span>
+					<span class="date_format">DD/MM/YYYY</span>
+					<span class="alarm_reminder">1440</span>
+					<span class="timezone">America/Argentina/Buenos_Aires</span>
+					<span class="title">Mis 15 - Flor</span>
+					<span class="description">Te espero para celebrar conmigo 🎉</span>
+					<span class="location">Jaque Eventos</span>
+				</div> -->
 			</div>
 	
 			<div class="flex flex-col items-center font-grotesk mb-4">
@@ -83,4 +87,20 @@ const [street, city, province] = data.address.split(',');
 		</div>
 </div>
 
-		
+<script is:inline>
+document.getElementById('btn-agendar')?.addEventListener('click', function () {
+    if (typeof addEvent === 'function') {
+        addEvent({
+            title: "Mis 15 - Flor",
+            description: "Te espero para celebrar conmigo 🎉",
+            location: "Jaque Eventos",
+            start: "2025-06-27T21:30:00",
+            timezone: "America/Argentina/Buenos_Aires",
+            allDay: false,
+            alarm_reminder: 1440 // 1 día antes
+        });
+    } else {
+        alert("El script de AddEvent no se ha cargado aún.");
+    }
+});
+</script>
