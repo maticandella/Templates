@@ -25,7 +25,7 @@ const formattedDate = `${formattedWeekday} ${day} de ${month} - ${formattedTime}
 // Dirección dividida
 const [street, city, province] = data.address.split(',');
 ---
-
+<script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js"></script>
 <div class="absolute inset-0 bg-[url('/images/cieloconestrellas.webp')] bg-cover bg-center grayscale brightness-50" data-background></div>
 <div class="relative z-10 flex flex-col justify-center items-center gap-4 p-10">
        <img src="/images/discoball.gif" alt="Gif de bola de disco" class="h-[35%] w-[35%] sm:h-[15%] sm:w-[15%] lg:h-[8%] lg:w-[8%]" loading="lazy">
@@ -42,14 +42,14 @@ const [street, city, province] = data.address.split(',');
 				</div>
 				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
 				
-				<!-- <a
+				<a
 					href="https://evt.to/eihodshhw" 
 					target="_blank" 
 					rel="noopener noreferrer"
 					class="btn-purple"
-				><button class="btn-purple">Agendar</button></a> -->
+				><button class="btn-purple">Agendar</button></a>
 
-				<button id="btn-agendar" class="btn-purple">Agendar</button>
+				<!-- <button id="btn-agendar" class="btn-purple">Agendar</button> -->
 				<!-- <div title="Add to Calendar" class="addeventatc" data-styling="none">
 					<button class="btn-purple">Agendar</button>
 					<span class="start">27/06/2025 09:30 PM</span>
