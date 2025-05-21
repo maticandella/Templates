@@ -41,25 +41,19 @@ const [street, city, province] = data.address.split(',');
 					<h3 class="text-black font-bold text-2xl mb-1">Día</h3>
 				</div>
 				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
-				
-				<a
+				<a 
+  					href="https://www.google.com/calendar/render?action=TEMPLATE&text=FlorFest&dates=20240627/20240628&details=Nos+vemos+en+Jaque+Eventos+🎉&location=Jaque+Eventos&sf=true&output=xml" 
+  					target="_blank" 
+  					rel="noopener noreferrer"
+  					>
+  					<button class="btn-purple">Agendar</button>
+				</a>
+				<!-- <a
 					href="https://evt.to/eihodshhw" 
 					target="_blank" 
 					rel="noopener noreferrer"
 					class="btn-purple"
-				><button class="btn-purple">Agendar</button></a>
-
-				<!-- <button id="btn-agendar" class="btn-purple">Agendar</button> -->
-				<!-- <div title="Add to Calendar" class="addeventatc" data-styling="none">
-					<button class="btn-purple">Agendar</button>
-					<span class="start">27/06/2025 09:30 PM</span>
-					<span class="date_format">DD/MM/YYYY</span>
-					<span class="alarm_reminder">1440</span>
-					<span class="timezone">America/Argentina/Buenos_Aires</span>
-					<span class="title">Mis 15 - Flor</span>
-					<span class="description">Te espero para celebrar conmigo 🎉</span>
-					<span class="location">Jaque Eventos</span>
-				</div> -->
+				><button class="btn-purple">Agendar</button></a> -->
 			</div>
 	
 			<div class="flex flex-col items-center font-grotesk mb-4">
@@ -74,13 +68,21 @@ const [street, city, province] = data.address.split(',');
 			</div>
 	
 			<div class="flex flex-col items-center font-grotesk px-4 sm:px-0">
-                <img src="/images/location.gif" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
+                <img src="/images/check.gif" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
 				<h3 class="text-black font-bold text-2xl mb-1">Asistencia</h3>
 				<h4 class="text-slate-500 text-lg text-center leading-snug mb-2">
 					{data.dateBefore}
 				</h4>
-				<a  href="https://wa.me/5493402540393?text=Hola%21%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20fiesta%20%F0%9F%8E%89" 
+				<!-- <a  href="https://wa.me/5493402540393?text=Hola%21%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20fiesta%20%F0%9F%8E%89" 
    					target="_blank">
+					<button class="btn-purple">Confirmar</button>
+				</a> -->
+
+				<a 
+					href="https://forms.gle/srBsezLvhaskrhTNA" 
+					target="_blank" 
+					rel="noopener noreferrer"
+				>
 					<button class="btn-purple">Confirmar</button>
 				</a>
 			  </div>

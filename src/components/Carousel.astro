@@ -8,17 +8,14 @@ import data from '../data/event.json';
   <img src="/images/camera.gif" alt="Descripción del gif" class="w-20 h-20" loading="lazy"/>
 </div>
 
-<div class="mb-5">
-  <!-- Carrusel -->
+<!-- <div class="mb-5">
   <swiper-container class="mySwiper w-40 h-60 sm:w-60 sm:h-80 flex flex-col items-center justify-center" effect="cards" grab-cursor="true">
     <swiper-slide><img src={data.gallery[0]} alt="Foto de galeria" /></swiper-slide>
     <swiper-slide><img src={data.gallery[1]} alt="Foto de galeria" /></swiper-slide>
     <swiper-slide><img src={data.gallery[2]} alt="Foto de galeria" /></swiper-slide>
     <swiper-slide><img src={data.gallery[3]} alt="Foto de galeria" /></swiper-slide>
-    <swiper-slide><img src={data.gallery[4]} alt="Foto de galeria" /></swiper-slide>
   </swiper-container>
 </div>
-  
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
@@ -32,6 +29,35 @@ import data from '../data/event.json';
       font-weight: bold;
       color: #fff;
     }
-</style>
+</style> -->
 
-  
+<swiper-container class="mySwiper w-full py-[50px]" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+    <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[0]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+    <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[1]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+    <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[2]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+    <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[3]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+   <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[4]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+    <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[5]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+    <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[6]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+    <swiper-slide class="bg-center bg-cover w-[300px] h-[300px]">
+      <img src={data.gallery[7]} alt="Foto de galeria" class="block w-full" />
+    </swiper-slide>
+  </swiper-container>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
