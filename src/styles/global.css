@@ -34,7 +34,8 @@
 /* PoltawskiNowy - SemiBold */
 @font-face {
   font-family: 'PoltawskiNowy';
-  src: url('/fonts/PoltawskiNowy-SemiBold.ttf') format('truetype');
+  src: url('/fonts/PoltawskiNowy-SemiBold.woff2') format('woff2'),
+       url('/fonts/PoltawskiNowy-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
@@ -42,7 +43,8 @@
 /* PoltawskiNowy - Italic */
 @font-face {
   font-family: 'PoltawskiNowy';
-  src: url('/fonts/PoltawskiNowy-Italic.ttf') format('truetype');
+  src: url('/fonts/PoltawskiNowy-Italic.woff2') format('woff2'),
+       url('/fonts/PoltawskiNowy-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
 }
@@ -53,7 +55,8 @@
   font-style: normal;
   font-weight: 600;
   font-stretch: 100%;
-  src: url('/fonts/Roboto-SemiBold.ttf') format('truetype');
+  src: url('/fonts/Roboto-SemiBold.woff2') format('woff2'),
+       url('/fonts/Roboto-SemiBold.ttf') format('truetype');
   font-display: swap;
 }
 
@@ -63,6 +66,7 @@
   font-style: normal;
   font-weight: 700;
   font-stretch: 100%;
-  src: url('/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+  src: url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+       url('/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
   font-display: swap;
 }
