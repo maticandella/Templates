@@ -31,16 +31,38 @@
     background: linear-gradient(to left, #eef2f3, #8e9eab);
 }
 
+/* PoltawskiNowy - SemiBold */
 @font-face {
-    font-family: 'PoltawskiNowy';
-    src: url('/fonts/PoltawskiNowy-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: 'PoltawskiNowy';
+  src: url('/fonts/PoltawskiNowy-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
 }
 
+/* PoltawskiNowy - Italic */
 @font-face {
-    font-family: 'PoltawskiNowy';
-    src: url('/fonts/PoltawskiNowy-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
+  font-family: 'PoltawskiNowy';
+  src: url('/fonts/PoltawskiNowy-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Roboto - Semibold (600) */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  src: url('/fonts/Roboto-SemiBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Space Grotesk - Bold (700) */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  src: url('/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-display: swap;
 }

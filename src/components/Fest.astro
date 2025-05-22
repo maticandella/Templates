@@ -25,10 +25,9 @@ const formattedDate = `${formattedWeekday} ${day} de ${month} - ${formattedTime}
 // Dirección dividida
 const [street, city, province] = data.address.split(',');
 ---
-<script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js"></script>
 <div class="absolute inset-0 bg-[url('/images/cieloconestrellas.webp')] bg-cover bg-center grayscale brightness-50" data-background></div>
 <div class="relative z-10 flex flex-col justify-center items-center gap-4 p-10">
-       <img src="/images/discoball.gif" alt="Gif de bola de disco" class="h-[35%] w-[35%] sm:h-[15%] sm:w-[15%] lg:h-[8%] lg:w-[8%]" loading="lazy">
+       <img src="/images/discoball.webp" alt="Gif de bola de disco" class="h-[35%] w-[35%] sm:h-[15%] sm:w-[15%] lg:h-[8%] lg:w-[8%]" loading="lazy">
 
         <hr class="h-0.5 w-[25%] sm:w-[22%] mx-auto bg-white">
         <h1 class="font-poltawskinowy text-5xl sm:text-6xl my-1 text-white">Fiesta</h1>
@@ -37,7 +36,7 @@ const [street, city, province] = data.address.split(',');
 		<div class="flex flex-col items-center my-5 bg-white py-5 px-8 rounded-3xl">
 			<div class="flex flex-col items-center font-grotesk mb-4">
 				<div class="flex flex-col gap-1 text-center mb-1">
-					<img src="/images/calendar.gif" alt="Gif de calendario" class="h-12 w-12" loading="lazy">
+					<img src="/images/calendar.webp" alt="Gif de calendario" class="h-12 w-12" loading="lazy">
 					<h3 class="text-black font-bold text-2xl mb-1">Día</h3>
 				</div>
 				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
@@ -48,16 +47,10 @@ const [street, city, province] = data.address.split(',');
   					>
   					<button class="btn-purple">Agendar</button>
 				</a>
-				<!-- <a
-					href="https://evt.to/eihodshhw" 
-					target="_blank" 
-					rel="noopener noreferrer"
-					class="btn-purple"
-				><button class="btn-purple">Agendar</button></a> -->
 			</div>
 	
 			<div class="flex flex-col items-center font-grotesk mb-4">
-                    <img src="/images/location.gif" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
+                    <img src="/images/location.webp" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
 					<h3 class="text-black font-bold text-2xl">Lugar</h3>
 				
 				<h4 class="text-slate-500 text-lg mb-2">{data.location}</h4>
@@ -68,15 +61,11 @@ const [street, city, province] = data.address.split(',');
 			</div>
 	
 			<div class="flex flex-col items-center font-grotesk px-4 sm:px-0">
-                <img src="/images/check.gif" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
+                <img src="/images/check.webp" alt="Gif de ubicación" class="h-12 w-12" loading="lazy">
 				<h3 class="text-black font-bold text-2xl mb-1">Asistencia</h3>
 				<h4 class="text-slate-500 text-lg text-center leading-snug mb-2">
 					{data.dateBefore}
 				</h4>
-				<!-- <a  href="https://wa.me/5493402540393?text=Hola%21%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20fiesta%20%F0%9F%8E%89" 
-   					target="_blank">
-					<button class="btn-purple">Confirmar</button>
-				</a> -->
 
 				<a 
 					href="https://forms.gle/srBsezLvhaskrhTNA" 
@@ -88,21 +77,3 @@ const [street, city, province] = data.address.split(',');
 			  </div>
 		</div>
 </div>
-
-<script is:inline>
-document.getElementById('btn-agendar')?.addEventListener('click', function () {
-    if (typeof addEvent === 'function') {
-        addEvent({
-            title: "Mis 15 - Flor",
-            description: "Te espero para celebrar conmigo 🎉",
-            location: "Jaque Eventos",
-            start: "2025-06-27T21:30:00",
-            timezone: "America/Argentina/Buenos_Aires",
-            allDay: false,
-            alarm_reminder: 1440 // 1 día antes
-        });
-    } else {
-        alert("El script de AddEvent no se ha cargado aún.");
-    }
-});
-</script>

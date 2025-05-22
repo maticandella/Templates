@@ -3,21 +3,19 @@
     "title": "FLORENCIA",
     "eventTitle": "Mis 15 años",
     "subtitle": "Te invito a festejar esta noche ¡inolvidable!",
-    "mainImage": "/images/3.jpg",
+    "mainImage": "/images/3.webp",
     "eventDate": "2025-06-27T21:30:00",
     "location": "Jaque Eventos",
     "address": "Bv. Oroño 1124, Rosario, Santa Fe",
     "dateBefore": "Antes del 10 de junio",
     "story": "Nos conocimos en 2015 y desde entonces hemos compartido aventuras increíbles. ¡Y ahora queremos celebrarlo con vos!",
     "gallery": [
-        "/images/1.jpg",
-        "/images/2.jpg",
-        "/images/3.jpg",
-        "/images/4.jpg",
-        "/images/5.jpg",
-        "/images/6.jpg",
-        "/images/7.jpg",
-        "/images/8.jpg"
+        "/images/1.webp",
+        "/images/2.webp",
+        "/images/3.webp",
+        "/images/4.webp",
+        "/images/5.webp",
+        "/images/6.webp"
     ],
     "hashtag": "#15Cami"
 }

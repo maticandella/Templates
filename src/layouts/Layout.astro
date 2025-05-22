@@ -12,19 +12,15 @@ const { titletop } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon @4.5.0/fonts/remixicon.css" rel="stylesheet"> -->
 		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>{titletop}</title>
 	</head>
 	<body class="font-sans">
 		<slot />
-		<script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js"></script>
-		 <script src="../scripts/audioControl.js"></script>
-
+		<script src="../scripts/audioControl.js"></script>
 	</body>
 </html>
 
