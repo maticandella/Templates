@@ -2,7 +2,33 @@
 import data from '../data/event.json';
 import Modal from './Modal.astro';
 
-const eventDate = new Date(data.eventDate);
+interface Props {
+  isBrindis: boolean;
+}
+
+const { isBrindis } = Astro.props;
+
+let eventDate: Date;
+let festTitle: string;
+let dateAdditional = "";
+let cardValue = "";
+let alias = "";
+let formLink = "";
+
+if(isBrindis) {
+	eventDate = new Date(data.brindis.eventDate);
+	festTitle = data.brindis.festTitle;
+	dateAdditional = data.brindis.dateAdditional;
+	cardValue = data.brindis.cardValue;
+	alias = data.brindis.alias;
+	formLink = data.brindis.formLink;
+}
+else {
+	eventDate = new Date(data.cena.eventDate);
+	festTitle = data.cena.festTitle;
+	formLink = data.cena.formLink;
+}
+// const eventDate = (isBrindis) ? new Date(data.brindis.eventDate) : new Date(data.cena.eventDate);
 
 // Obtenemos cada parte por separado
 const weekday = eventDate.toLocaleDateString('es-AR', { weekday: 'long' });
@@ -22,15 +48,14 @@ const formattedTime = eventDate.toLocaleTimeString('es-AR', {
 // Resultado sin la coma:
 const formattedDate = `${formattedWeekday} ${day} de ${month} - ${formattedTime} hs`;
 
-// Dirección dividida
-const [street, city, province] = data.address.split(',');
+
 ---
 <div class="absolute inset-0 bg-[url('/images/cieloconestrellas.webp')] bg-cover bg-center grayscale brightness-50" data-background></div>
 <div class="relative z-10 flex flex-col justify-center items-center gap-4 p-10">
        <img src="/images/discoball.webp" alt="Gif de bola de disco" class="h-[35%] w-[35%] sm:h-[15%] sm:w-[15%] lg:h-[8%] lg:w-[8%]" loading="lazy">
 
         <hr class="h-0.5 w-[25%] sm:w-[22%] mx-auto bg-white">
-        <h1 class="font-poltawskinowy text-5xl sm:text-6xl my-1 text-white">Fiesta</h1>
+        <h1 class="font-poltawskinowy text-5xl sm:text-6xl my-1 text-white">{festTitle}</h1>
         <hr class="h-0.5 w-[25%] sm:w-[22%] mx-auto bg-white">
 	
 		<div class="flex flex-col items-center my-5 bg-white py-5 px-8 rounded-3xl">
@@ -40,6 +65,9 @@ const [street, city, province] = data.address.split(',');
 					<h3 class="text-black font-bold text-2xl mb-1">Día</h3>
 				</div>
 				<h4 class="text-slate-500 text-lg mb-2">{formattedDate}</h4>
+				{isBrindis ? (
+						<h4 class="text-slate-400 text-md mb-2">{data.brindis.dateAdditional}</h4>
+					) : ('')}
 				<a 
   					href="https://www.google.com/calendar/render?action=TEMPLATE&text=FlorFest&dates=20240627/20240628&details=Nos+vemos+en+Jaque+Eventos+🎉&location=Jaque+Eventos&sf=true&output=xml" 
   					target="_blank" 
@@ -66,9 +94,12 @@ const [street, city, province] = data.address.split(',');
 				<h4 class="text-slate-500 text-lg text-center leading-snug mb-2">
 					{data.dateBefore}
 				</h4>
-
+				{isBrindis ? (
+						<h4 class="text-slate-400 text-md text-center leading-snug">Valor tarjeta: <span class="text-slate-700">{data.brindis.cardValue}</span></h4>
+						<h4 class="text-slate-400 text-md text-center leading-snug mb-2">Alias: <span class="text-slate-700">{data.brindis.alias}</span></h4>
+					) : ('')}
 				<a 
-					href="https://forms.gle/srBsezLvhaskrhTNA" 
+					href={formLink}
 					target="_blank" 
 					rel="noopener noreferrer"
 				>

@@ -9,13 +9,29 @@ import Gifts from '../components/Gifts.astro';
 import SocialMedia from '../components/SocialMedia.astro';
 import 'remixicon/fonts/remixicon.css';
 import Footer from '../components/Footer.astro';
-import Modal from '../components/Modal.astro';
 import Fest from '../components/Fest.astro';
 import Video from '../components/Video.astro';
 import Subtitle from '../components/Subtitle.astro';
 import MusicButton from '../components/MusicButton.astro';
 import ModalInit from '../components/ModalInit.astro';
 import FinalSection from '../components/FinalSection.astro';
+export const prerender = false;
+
+type InvitationType = 'cena' | 'brindis';
+
+const Codes: Record<string, InvitationType> = {
+  b: 'brindis',
+  c: 'cena'
+};
+
+const url = new URL(Astro.request.url);
+const invitationCode = url.searchParams.get('t') || 'c';
+const invitationType = Codes[invitationCode] || 'cena';
+// const eventData = invitationType === 'brindis' ? data.brindis : data.cena;
+
+console.log("URL:", Astro.request.url);
+console.log("Invitation Code:", invitationCode);
+console.log("Invitation Type:", invitationType);
 ---
 
 <Layout titletop={data.titletop}>
@@ -54,7 +70,7 @@ import FinalSection from '../components/FinalSection.astro';
 
 	<!-- Sección fiesta -->
 	<section class="relative">
-		<Fest />
+		<Fest isBrindis={invitationType === 'brindis'} />
 	</section>
 	
 	<!-- Sección Galería -->

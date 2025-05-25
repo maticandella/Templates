@@ -4,11 +4,9 @@
     "eventTitle": "Mis 15 años",
     "subtitle": "Te invito a festejar esta noche ¡inolvidable!",
     "mainImage": "/images/3.webp",
-    "eventDate": "2025-06-27T21:30:00",
     "location": "Jaque Eventos",
     "address": "Bv. Oroño 1124, Rosario, Santa Fe",
     "dateBefore": "Antes del 10 de junio",
-    "story": "Nos conocimos en 2015 y desde entonces hemos compartido aventuras increíbles. ¡Y ahora queremos celebrarlo con vos!",
     "gallery": [
         "/images/1.webp",
         "/images/2.webp",
@@ -17,5 +15,17 @@
         "/images/5.webp",
         "/images/6.webp"
     ],
-    "hashtag": "#15Cami"
+    "cena": {
+        "festTitle": "Fiesta",
+        "eventDate": "2025-06-27T21:30:00",
+        "formLink": "https://forms.gle/srBsezLvhaskrhTNA"
+    },
+    "brindis": {
+        "festTitle": "Brindis",
+        "eventDate": "2025-06-28T00:30:00",
+        "dateAdditional": "(Viernes a la noche)",
+        "cardValue": "$20.000",
+        "alias": "MF.BONIFAZI.mp",
+        "formLink": "https://forms.gle/iy32qwkkAJQrYwSL8"
+    }
 }
