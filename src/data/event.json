@@ -2,7 +2,7 @@
     "titletop": "Mis XV Flor",
     "title": "FLORENCIA",
     "eventTitle": "Mis 15 años",
-    "subtitle": "Te invito a festejar esta noche ¡inolvidable!",
+    "subtitle": "Un sueño, una ilusión que hoy se hace realidad. Gracias por ser parte de esta noche tan especial.",
     "mainImage": "/images/3.webp",
     "location": "Jaque Eventos",
     "address": "Bv. Oroño 1124, Rosario, Santa Fe",
@@ -27,5 +27,11 @@
         "cardValue": "$20.000",
         "alias": "MF.BONIFAZI.mp",
         "formLink": "https://forms.gle/iy32qwkkAJQrYwSL8"
+    },
+    "gift": {
+        "name": "Florencia DErcole",
+        "account": "CVU: 0000003100026963406628",
+        "alias": "flor.dercole.mp",
+        "cuit": "27504050764"
     }
 }

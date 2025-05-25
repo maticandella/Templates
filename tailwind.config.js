@@ -8,6 +8,9 @@ module.exports = {
                 grotesk: ['Space Grotesk', 'sans-serif'],
                 poltawskinowy: ['PoltawskiNowy', 'serif'],
             },
+            backgroundImage: {
+                'parallax' : "url('/images/disco.webp')"
+            }
         },
     },
     plugins: [],

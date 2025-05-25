@@ -7,7 +7,6 @@ import Carousel from '../components/Carousel.astro';
 import Cards from '../components/Cards.astro';
 import Gifts from '../components/Gifts.astro';
 import SocialMedia from '../components/SocialMedia.astro';
-import 'remixicon/fonts/remixicon.css';
 import Footer from '../components/Footer.astro';
 import Fest from '../components/Fest.astro';
 import Video from '../components/Video.astro';
@@ -27,36 +26,27 @@ const Codes: Record<string, InvitationType> = {
 const url = new URL(Astro.request.url);
 const invitationCode = url.searchParams.get('t') || 'c';
 const invitationType = Codes[invitationCode] || 'cena';
-// const eventData = invitationType === 'brindis' ? data.brindis : data.cena;
-
-console.log("URL:", Astro.request.url);
-console.log("Invitation Code:", invitationCode);
-console.log("Invitation Type:", invitationType);
 ---
 
 <Layout titletop={data.titletop}>
 	<ModalInit />
-	<!-- todo creo que hay que cambiar el icono, quedaria mejor una nota musical -->
 	<MusicButton />
 	<audio id="background-music" src="/music.mp3" loop preload="auto"></audio>
 	
-	<!-- todo ver ubicacion de elementos en base a la foto de flor -->
 	<Hero />
 
-	<!-- todo agrandar comillas en pantallas de celu -->
-	<!-- todo cambiar frase -->
 	<section class="px-4 overflow-x-auto my-10">
 		<Subtitle />
 	</section>
 
-	<!-- todo cambiar tipofrafía -->
 	<!-- todo averiguar como hacer el parallax para el scroll, ya que en IOS mobile no funciona -->
 	<section class="relative flex flex-col justify-center items-center space-y-4 my-10 text-white min-h-[500px] w-full">
 		
 		<!-- Fondo -->
-		<!-- <div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-background style="background-image: url('/images/disco.webp'); background-attachment: fixed;"></div> -->
-		<div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-background style="background-image: url('/images/disco.webp');"></div>
-  
+		<div class="absolute inset-0 bg-cover bg-center bg-fixed grayscale brightness-50" data-background style="background-image: url('/images/disco.webp');"></div>
+		<!-- <div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-background style="background-image: url('/images/disco.webp');"></div> -->
+  		<!-- <div class="absolute inset-0 bg-fixed bg-parallax bg-center bg-cover grayscale brightness-50"> -->
+
 		<!-- Centro oscuro -->
 		<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
 			<div class="w-[60%] h-[60%] bg-black/60 rounded-full blur-3xl"></div>
@@ -78,13 +68,11 @@ console.log("Invitation Type:", invitationType);
 		<Carousel />
 	</section>
 	
-	<!-- todo falta acomodar las img para cada modal -->
 	<!-- Sección Cards -->
 	<section class="my-10">
 		<Cards />
 	</section>
 
-	<!-- todo falta el modal -->
 	<!-- Sección Gifts -->
 	<section class="relative my-10">
 		<Gifts />

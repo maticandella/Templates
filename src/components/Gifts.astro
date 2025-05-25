@@ -1,12 +1,15 @@
 ---
 import Modal from "./Modal.astro";
+import data from '../data/event.json';
+
+const giftData = data.gift;
+const giftContent = `${giftData.name}\n${giftData.account}\nAlias: ${giftData.alias}\nCUIT/CUIL: ${giftData.cuit}`;
 ---
 
 <div class="absolute inset-0 bg-[url('/images/cieloconestrellas.webp')] bg-cover bg-center grayscale brightness-50" data-background></div>
 <div class="relative z-10 flex flex-col justify-center items-center gap-4 p-10">
-<!-- <div class="flex flex-col items-center justify-center my-5"> -->
-    <h1 class="font-roboto font-semibold text-3xl text-white mb-3">Regalos</h1>
-    <h4 class="text-white text-lg mb-2 text-center px-4">Si deseas regalarme algo más que tu hermosa presencia...</h4>
+    <h1 class="font-poltawskinowy text-5xl sm:text-6xl my-1 text-white">Regalos</h1>
+    <p class="text-white text-lg mb-2 text-center px-4">Nada es más importante que tu presencia, pero si deseas hacerme un presente…</p>
     <img src="/images/gift.webp" alt="Gif de caja de regalo" class="w-20 h-20 mb-4" loading="lazy">
     <button class="btn-purple"
         onclick="document.getElementById('modal-gifs').classList.remove('hidden'); document.getElementById('modal-gifs').classList.add('flex');">
@@ -17,6 +20,6 @@ import Modal from "./Modal.astro";
 <Modal
   id="modal-gifs"
   title="Regalos"
-  content="Alias: regalito.evento\nCBU: 0000003100000000000011 💸"
+  content={giftContent}
   iconName="/images/gift-black.webp"
 />
