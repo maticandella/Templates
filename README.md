@@ -1,48 +1,52 @@
-# Astro Starter Kit: Basics
+# 🌸 FlorFest Landing
 
-```sh
-npm create astro@latest -- --template basics
-```
+Una landing minimalista y elegante para un evento especial, construida con [Astro](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/).  
+Sirve como invitación interactiva con opciones dinámicas para diferentes momentos del evento. 🎉🥂🍽️
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Demo
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+👉 [https://florfest.vercel.app](https://florfest.vercel.app)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## ✨ Características
 
-## 🚀 Project Structure
+- Renderizado ultra rápido gracias a Astro.
+- Estilos modernos con Tailwind.
+- Personalización mediante parámetros en la URL.
+- Responsive y lista para dispositivos móviles.
+- Hosting gratuito con Vercel.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🧠 Lógica de comportamiento
 
-```text
-/
-├── public/
-│   └── favicon.ico
+La landing detecta el tipo de invitación mediante un parámetro `t` en la URL:
+
+| Parámetro | Descripción           |
+|----------|------------------------|
+| `?t=b`   | Brindis                |
+| `?t=c`   | Cena                   |
+| *(sin `t`)* | Default a **Cena**    |
+
+### Ejemplos
+
+- `https://florfest.vercel.app/?t=b` 👉 Se muestra la invitación al **brindis**.
+- `https://florfest.vercel.app/?t=c` 👉 Se muestra la invitación a la **cena**.
+- `https://florfest.vercel.app/` 👉 Por defecto se asume **cena**.
+
+## 🛠️ Tecnologías usadas
+
+- **Astro** – Framework de sitios estáticos moderno.
+- **Tailwind CSS** – Utility-first para estilos rápidos.
+- **Vercel** – Deploy continuo y sencillo.
+
+## 📁 Estructura del proyecto
+
+```bash
+.
+├── public/           # Archivos estáticos
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
+│   ├── components/   # Componentes reutilizables
+│   ├── layouts/      # Layouts base
 │   └── pages/
-│       └── index.astro
+│       └── index.astro # Página principal con lógica de renderizado
+├── astro.config.mjs  # Configuración de Astro
+├── tailwind.config.cjs # Configuración de Tailwind
 └── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
