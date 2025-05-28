@@ -84,8 +84,17 @@ const invitationType = Codes[invitationCode] || 'cena';
 		<SocialMedia />
 	</section>
 
-	<section class="relative w-full h-[80vh] flex items-center justify-center overflow-hidden text-white">
-		<Video />
+	<section class="w-full max-h-[100vh]">
+		<video
+			class="w-full h-auto object-cover"
+			autoplay
+			muted
+			loop
+			playsinline
+		>
+			<source src="/videos/fest15.mp4" type="video/mp4" />
+			Tu navegador no soporta videos HTML5.
+		</video>
 	</section>
 	
 	<FinalSection />
