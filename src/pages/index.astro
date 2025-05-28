@@ -78,25 +78,26 @@ const invitationType = Codes[invitationCode] || 'cena';
 		<Gifts />
 	</section>
 
-	<!-- todo falta link a carpeta -->
 	<!-- Sección Social Media -->
 	<section class="my-10">
 		<SocialMedia />
 	</section>
 
-	<section class="w-full max-h-[100vh]">
-		<video
-			class="w-full h-auto object-cover"
-			autoplay
-			muted
-			loop
-			playsinline
-		>
-			<source src="/videos/fest15.mp4" type="video/mp4" />
-			Tu navegador no soporta videos HTML5.
-		</video>
-	</section>
-	
+	<div class="w-full max-w-6xl mx-auto">
+		<div class="aspect-video justify-center items-center flex">
+			<video
+					class="lg:w-[95%] lg:h-[95%]"
+					autoplay
+					muted
+					loop
+					playsinline
+				>
+					<source src="/videos/fest15.mp4" type="video/mp4" />
+					Tu navegador no soporta videos HTML5.
+				</video>
+		</div>
+	</div>
+
 	<FinalSection />
 	<Footer />
 </Layout>
