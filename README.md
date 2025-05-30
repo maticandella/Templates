@@ -5,7 +5,7 @@ Sirve como invitación interactiva con opciones dinámicas para diferentes momen
 
 ## 🚀 Demo
 
-👉 [https://florfest.vercel.app](https://florfest.vercel.app)
+👉 [https://tumomento.vercel.app/florfest](https://tumomento.vercel.app/florfest)
 
 ## ✨ Características
 
@@ -27,9 +27,9 @@ La landing detecta el tipo de invitación mediante un parámetro `t` en la URL:
 
 ### Ejemplos
 
-- `https://florfest.vercel.app/?t=b` 👉 Se muestra la invitación al **brindis**.
-- `https://florfest.vercel.app/?t=c` 👉 Se muestra la invitación a la **cena**.
-- `https://florfest.vercel.app/` 👉 Por defecto se asume **cena**.
+- `https://tumomento.vercel.app/florfest?t=b` 👉 Se muestra la invitación al **brindis**.
+- `https://tumomento.vercel.app/florfest?t=c` 👉 Se muestra la invitación a la **cena**.
+- `https://tumomento.vercel.app/florfest` 👉 Por defecto se asume **cena**.
 
 ## 🛠️ Tecnologías usadas
 
@@ -46,7 +46,7 @@ La landing detecta el tipo de invitación mediante un parámetro `t` en la URL:
 │   ├── components/   # Componentes reutilizables
 │   ├── layouts/      # Layouts base
 │   └── pages/
-│       └── index.astro # Página principal con lógica de renderizado
+│       └── [event].astro # Página principal con lógica de renderizado
 ├── astro.config.mjs  # Configuración de Astro
 ├── tailwind.config.cjs # Configuración de Tailwind
 └── package.json
