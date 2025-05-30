@@ -97,10 +97,7 @@ const formattedDate = `${formattedWeekday} ${day} de ${month} - ${formattedTime}
 				{isBrindis ? (
 						<p class="text-slate-400 text-md text-center leading-snug">Valor tarjeta: <span class="text-slate-700">{data.brindis.cardValue}</span></p>
 						<p class="text-slate-400 text-md text-center leading-snug">Alias: <span class="text-slate-700">{data.brindis.alias}</span></p>
-						<p class="text-slate-400 text-md text-center leading-snug mb-2">Enviar comprobante al: <a href={`https://wa.me/${data.brindis.wspNumber}`} 
-    						target="_blank" 
-    						rel="noopener noreferrer"
-    						class="text-slate-700 underline hover:text-green-600 transition">{data.brindis.voucherNumber}</a></p>
+						<p class="text-slate-400 text-md text-center leading-snug mb-2">{data.brindis.voucher}</p>
 					) : ('')}
 				<a 
 					href={formLink}
