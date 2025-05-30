@@ -1,6 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import data from '../data/florfest/event.json';
+import fs from 'fs/promises';
+import path from 'path';
+
+const { event } = Astro.params;
+
+const eventFilePath = path.resolve(`./src/data/${event}/event.json`);
+
+let data;
+
+try {
+  const json = await fs.readFile(eventFilePath, 'utf-8');
+  data = JSON.parse(json);
+} catch (error) {
+  // Si el evento no existe, podés tirar un 404
+  return new Response(`Evento "${event}" no encontrado.`, { status: 404 });
+}
+
+// import data from '../data/event.json';
 import Hero from '../components/Hero.astro';
 import Countdown from '../components/Countdown.astro';
 import Carousel from '../components/Carousel.astro';
